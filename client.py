@@ -8,7 +8,7 @@ class Statistics:
 
     def run(self, switch):
         wins = 0;
-        losses = 0
+        losses = 0;
 
         for i in range(self.samples):
             game = Game(self.size);
@@ -22,7 +22,7 @@ class Statistics:
                     options.remove(choice);
                     choice = random.choice(options);
             
-            result = game.getResults(choice)
+            result = game.getResults(choice);
 
             wins = wins+1 if result else wins;
             losses = losses if result else losses+1;
@@ -93,9 +93,13 @@ class Game:
 
 
 def main():
-    stats = Statistics(3, 10_000);
+    doors = int(input("Number of doors (default is 3): ") or 3);
+    itterations = 10_000;
 
-    stats.compare()
+    print(f"\nRunning with {doors} doors and {itterations} itterations. \n")
+
+    stats = Statistics(doors, itterations);
+    stats.compare();
 
 if __name__=="__main__":
     main();
