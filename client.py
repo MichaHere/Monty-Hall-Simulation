@@ -32,7 +32,7 @@ class Statistics:
     def compare(self):
         print("Run without changing the initial guess: ");
         self.run(False);
-        print("\nRun by contantly changing the guess: ");
+        print("\nRun by constantly changing the guess: ");
         self.run(True);
 
 class Game:
